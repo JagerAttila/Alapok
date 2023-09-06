@@ -9,9 +9,9 @@ export class AppComponent {
   title = 'Alapok';
 
   oszlopok =[
-    {key:"name",texthu:"Név"},
-    {key:"age", texthu:"Kor"},
-    {key:"hair", texthu:"Hallyszínw"},
+    {key:"name",texthu:"Név", type:"plain"},
+    {key:"age", texthu:"Kor", type:"number"},
+    {key:"hair", texthu:"Hallyszínw", type:"text"},
   ]
 
   obj:any =[
