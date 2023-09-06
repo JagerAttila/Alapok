@@ -17,6 +17,16 @@
     Műveletek
   </div>
 </div>
+{{ujTancsi|json}}
+<div class="row my-2">
+  <div *ngFor="let oszlop of oszlopok"  class="col">   
+      <input [(ngModel)]="ujTancsi[oszlop.key]" [type]="oszlop.type" class="form-control">
+   </div>
+
+  <div class="col">
+      <button (click)="uj()" type="button" class="btn btn-danger">Felvétel</button>
+  </div>
+</div>
 
 <div *ngFor="let tancsi of obj; let i = index" class="row my-2">
   <div *ngFor="let oszlop of oszlopok"  class="col">

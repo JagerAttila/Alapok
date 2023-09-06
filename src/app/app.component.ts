@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from './config.service';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Alapok';
+  oszlopok:any;
 
-  oszlopok =[
-    {key:"name",texthu:"Név", type:"plain"},
-    {key:"age", texthu:"Kor", type:"number"},
-    {key:"hair", texthu:"Hallyszínw", type:"text"},
-  ]
+  
+  ujTancsi:any={}
+  uj(){
+    this.obj.push(this.ujTancsi);
+    this.ujTancsi={}
+  }
+
+  constructor(private config:ConfigService) { 
+    this.oszlopok=config.getOszlopok();
+  }
 
   obj:any =[
     {name:"Béla", age:31, hair:"barna"},
@@ -21,6 +28,7 @@ export class AppComponent {
     {name:"Józsi", age:55, hair:"fekete"},
     {name:"András", age:56, hair:"barna"},
   ];
+
 
 
   torol(tancsi:any, i:number){
